@@ -35,6 +35,7 @@ There's a lot to TODO:
 
 - [ ] Cleanup unused Astrowind artifacts
 - [ ] Add document converters (e.g. Json to XML)
+- [ ] Create Favicon
 
 ## Contributing
 
