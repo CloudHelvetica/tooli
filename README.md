@@ -5,7 +5,7 @@ A free and open-source set of developer tools built on the shoulders of giants. 
 ## Key Points:
 
 - Open-source
-- privacy respecting
+- Privacy respecting
   - No advertising or social trackers
   - No phoning home, your data stays local
 - Self-hostable
@@ -22,6 +22,7 @@ A free and open-source set of developer tools built on the shoulders of giants. 
   - [Commands](#commands)
   - [Deploy](#deploy)
 - [Acknowledgements](#acknowledgements)
+- [Privacy Disclosure](#privacy-disclosure)
 - [License](#license)
 
 </details>
@@ -144,3 +145,7 @@ Clone this repository on own GitHub account and deploy to Vercel:
 ## License
 
 Each piece of software is licensed under their respective original licenses. This repo itself is licensed under the most permissive license allowed by the constituent packages.
+
+## Privacy Disclosure
+
+The only data logged per-visit is [performed by github](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#data-collection), as [Tooli.Tools](https://tooli.tools) is hosted on Github pages.
