@@ -41,7 +41,7 @@ export const getPermalink = (slug = '', type = 'page') => {
 
 /** */
 export const getHomePermalink = () => {
-	return '/'
+	return '/' // TODO 
 	const permalink = getPermalink();
 	return permalink !== '/' ? permalink + '/' : permalink;
 };
