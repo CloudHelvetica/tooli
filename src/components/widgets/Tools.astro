@@ -21,7 +21,9 @@ const items = [
 	let cards = document.querySelectorAll('.box');
 	const alert = document.getElementById('no-results');
 
-	function processSearchQuery() {
+	function processSearchQuery(event) {
+		event.preventDefault();
+
 		alert.classList.remove('inline-block');
 		alert.classList.add('hidden');
 
@@ -44,13 +46,15 @@ const items = [
 		}
 	}
 
-	let searchInput = document.getElementById('search');
+	let searchForm = document.getElementById('search-form');
+	let searchInput = document.getElementById('search-btn');
+	searchForm.addEventListener('submit', processSearchQuery);
 	searchInput.addEventListener('keyup', processSearchQuery);
 </script>
 
 <div class="mb-10 max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
 	<div class="flex w-full sm:w-auto">
-		<form>
+		<form id="search-form">
 			<label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
 			<div class="relative">
 				<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -70,7 +74,7 @@ const items = [
 				</div>
 				<input
 					type="search"
-					id="search"
+					id="search-btn"
 					class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 					placeholder="Search..."
 					required
