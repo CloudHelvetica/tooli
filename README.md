@@ -33,11 +33,17 @@ A free and open-source set of developer tools built on the shoulders of giants. 
 
 There's a lot to TODO:
 
+**General**
+
 - [ ] Cleanup unused Astrowind artifacts
-- [ ] Add document converters (e.g. Json to XML)
 - [ ] Create Favicon
-- [ ] Working search bar on Index
+- [ ] Better search functionality on home page
 - [ ] Copy to Clip board buttons
+
+**Tools**
+
+- [ ] Document converters (e.g. Json to XML)
+- [ ] XML Formater
 
 ## Contributing
 
