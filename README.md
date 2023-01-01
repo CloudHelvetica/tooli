@@ -120,6 +120,8 @@ All commands are run from the root of the project, from a terminal:
 
 ### Deploy
 
+Build and deploy for the [Tooli.Tools](https://tooli.tools) homepage is accomplished through github actions contained within this repo.
+
 #### Deploy to production (manual)
 
 You can create an optimized production build with:
@@ -131,18 +133,6 @@ npm run build
 Now, your website is ready to be deployed. All generated files are located at
 `dist` folder, which you can deploy the folder to any hosting service you
 prefer.
-
-#### Deploy to Netlify
-
-Clone this repository on own GitHub account and deploy to Netlify:
-
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/onwidget/astrowind)
-
-#### Deploy to Vercel
-
-Clone this repository on own GitHub account and deploy to Vercel:
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonwidget%2Fastrowind)
 
 <br>
 
