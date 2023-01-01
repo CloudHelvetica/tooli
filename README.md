@@ -37,6 +37,7 @@ There's a lot to TODO:
 - [ ] Add document converters (e.g. Json to XML)
 - [ ] Create Favicon
 - [ ] Working search bar on Index
+- [ ] Copy to Clip board buttons
 
 ## Contributing
 

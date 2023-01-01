@@ -5,8 +5,14 @@ const items = [
 	{
 		title: 'Json Formater',
 		description: 'Validate and format Json data with a click of a button',
-		icon: 'flat-color-icons:home',
+		icon: 'mdi:code-json',
 		slug: 'json',
+	},
+	{
+		title: 'Base64',
+		description: 'Encode and decode between Base64 and plain-text',
+		icon: 'ri:a-b',
+		slug: 'base64',
 	},
 	// {
 	// 	title: 'Footers',
@@ -61,7 +67,6 @@ const items = [
 							<div class="relative flex flex-col p-6 bg-white dark:bg-slate-900 rounded shadow-xl hover:shadow-lg transition dark:border dark:border-slate-800">
 								<div class="flex items-center mb-4">
 									<Icon name={icon} class="w-12 h-12" />
-
 									<div class="ml-4 text-xl font-bold">{title}</div>
 								</div>
 								<p class="text-gray-500 dark:text-gray-400 text-md">{description}</p>
