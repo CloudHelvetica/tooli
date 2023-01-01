@@ -44,6 +44,9 @@ There's a lot to TODO:
 
 - [ ] Document converters (e.g. Json to XML)
 - [ ] XML Formater
+- [ ] Timestamp converter
+- [ ] Code minify / beautify
+- [ ] Secret vault generator
 
 ## Contributing
 
