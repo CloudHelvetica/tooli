@@ -47,6 +47,8 @@ There's a lot to TODO:
 - [ ] Timestamp converter
 - [ ] Code minify / beautify
 - [ ] Secret vault generator
+- [ ] Hash functions (e.g. sha256, md5)
+- [ ] DNS probes
 
 ## Contributing
 
