@@ -1,8 +1,8 @@
 ---
 import '~/assets/styles/base.css';
 
-import MetaTags from '~/components/core/MetaTags.astro';
 import BasicScripts from '~/components/core/BasicScripts.astro';
+import MetaTags from '~/components/core/MetaTags.astro';
 
 const { meta = {} } = Astro.props;
 ---
@@ -10,6 +10,9 @@ const { meta = {} } = Astro.props;
 <!DOCTYPE html>
 <html lang="en" class="motion-safe:scroll-smooth 2xl:text-[20px]">
 	<head>
+		<script type="application/javascript">
+			var global = window; // fix for dohjs, browserify-stream
+		</script>
 		<MetaTags {...meta} />
 	</head>
 

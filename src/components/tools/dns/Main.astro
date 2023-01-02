@@ -1,9 +1,15 @@
 ---
 import Error from '~/components/atoms/Error.astro';
+if (global === undefined) {
+	var global = {};
+}
 ---
 
 <!-- Here's an example script where we use dohjs -->
 <script>
+	if (global === undefined) {
+		var global = {};
+	}
 	import doh from 'dohjs';
 	// document.addEventListener('DOMContentLoaded', function (e) {
 	document.getElementById('send-query').addEventListener('click', function (e) {
@@ -81,7 +87,7 @@ import Error from '~/components/atoms/Error.astro';
 						</tr>
 						<tr>
 							<td>URL</td>
-							<td><input type="text" id="url" value="https://dns.google/dns-query" /></td>
+							<td><input type="text" id="url" value="https://cloudflare-dns.com/dns-query" /></td>
 						</tr>
 						<tr>
 							<td>Query name</td>

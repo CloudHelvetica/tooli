@@ -45,6 +45,9 @@
   },
   "dependencies": {
     "dohjs": "^0.3.3",
-    "jsnview": "^2.0.4"
+    "http-browserify": "^1.7.0",
+    "https-browserify": "^1.0.0",
+    "jsnview": "^2.0.4",
+    "stream-browserify": "^3.0.0"
   }
 }
