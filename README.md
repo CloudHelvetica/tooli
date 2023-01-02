@@ -39,6 +39,8 @@ There's a lot to TODO:
 - [ ] Create Favicon
 - [ ] Better search functionality on home page
 - [ ] Copy to Clip board buttons
+- [ ] Make it easier to self-host
+- [ ] Script to pull source, complie, hash and compare to hash on tooli.tool website to prove the source is the same as what is deployed (to some extent)
 
 **Tools**
 
