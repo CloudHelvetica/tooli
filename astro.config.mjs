@@ -58,6 +58,10 @@ export default defineConfig({
 				https: "https-browserify",
 				http: "http-browserify",
 				stream: "stream-browserify",
+				Buffer:'buffer/',
+				buffer:'buffer/',
+				buf:'buffer/',
+				dgram:'dgram-browserify'
 			},
 		},
 	},

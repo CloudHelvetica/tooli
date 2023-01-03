@@ -50,7 +50,7 @@ There's a lot to TODO:
 - [ ] Code minify / beautify
 - [ ] Secret vault generator
 - [ ] Hash functions (e.g. sha256, md5)
-- [ ] DNS probes
+- [ ] Better error handling for DNS tool
 
 ## Contributing
 
