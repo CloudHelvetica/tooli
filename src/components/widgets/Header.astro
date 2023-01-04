@@ -3,8 +3,6 @@ import { Icon } from 'astro-icon';
 import Logo from '~/components/atoms/Logo.astro';
 import ToggleMenu from '~/components/core/ToggleMenu.astro';
 import ToggleTheme from '~/components/core/ToggleTheme.astro';
-
-import { getHomePermalink } from '~/utils/permalinks';
 ---
 
 <header
@@ -13,7 +11,7 @@ import { getHomePermalink } from '~/utils/permalinks';
 >
 	<div class="py-3 px-3 mx-auto w-full md:flex md:justify-between max-w-6xl md:px-4">
 		<div class="flex justify-between">
-			<a class="flex items-center" href={getHomePermalink()}>
+			<a class="flex items-center" href="/">
 				<Logo />
 			</a>
 			<div class="flex items-center md:hidden">
