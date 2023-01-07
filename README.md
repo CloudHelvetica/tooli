@@ -40,7 +40,7 @@ There's a lot to TODO:
 - [ ] Better search functionality on home page
 - [ ] Copy to Clip board buttons
 - [ ] Make it easier to self-host
-- [ ] Script to pull source, complie, hash and compare to hash on tooli.tool website to prove the source is the same as what is deployed (to some extent)
+- [ ] Script to pull source, compile, hash and compare to hash on tooli.tool website to prove the source is the same as what is deployed (to some extent)
 
 **Tools**
 
@@ -146,7 +146,8 @@ prefer.
 ## Acknowledgements
 
 - **Website Theme**: [Astrowind](https://github.com/onwidget/astrowind).
-- **Json formatting** by [json-viewer](https://wutility.github.io/json-viewer/)
+- **Json formatting**: [json-viewer](https://wutility.github.io/json-viewer/)
+- **DNS over HTTPs**: [Doh](https://github.com/byu-imaal/dohjs)
 
 ## License
 
