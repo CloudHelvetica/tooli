@@ -1,13 +1,11 @@
 # TooliTools
 
-A free and open-source set of developer tools built on the shoulders of giants. Built with privacy in-mind for a lightweight experience.
-
-## Key Points:
+A free and open-source set of developer tools built on the shoulders of giants. Built with privacy in-mind for a lightweight experience. Some key points of tooli.tools:
 
 - Open-source
 - Privacy respecting
   - No advertising or social trackers
-  - No phoning home, your data stays local
+  - No phoning home, **your data stays local** to your browser
 - Self-hostable
 - Zero Advertisements
 
@@ -33,15 +31,6 @@ A free and open-source set of developer tools built on the shoulders of giants. 
 
 There's a lot to TODO:
 
-**General**
-
-- [ ] Cleanup unused Astrowind artifacts
-- [ ] Create Favicon
-- [ ] Better search functionality on home page
-- [ ] Copy to Clip board buttons
-- [ ] Make it easier to self-host
-- [ ] Script to pull source, compile, hash and compare to hash on tooli.tool website to prove the source is the same as what is deployed (to some extent)
-
 **Tools**
 
 - [ ] Document converters (e.g. Json to XML)
@@ -52,102 +41,22 @@ There's a lot to TODO:
 - [ ] Hash functions (e.g. sha256, md5)
 - [ ] Better error handling for DNS tool
 
+**House-keeping**
+
+- [ ] Create Favicon
+- [ ] Make it easier to self-host (e.g. by adding clear documentation)
+- [ ] Copy to Clip board buttons
+- [ ] Cleanup unused Astrowind artifacts
+- [ ] Better search functionality on home page
+- [ ] A transparent way to verify that the content tooli.tools website website is not altered
+
 ## Contributing
 
-If you have any idea, suggestions or find any bugs, feel free to open a discussion, an issue or create a pull request.
-That would be very useful for all of us and we would be happy to listen and take action.
-
-### Project structure
-
-Inside AstroWind template, you'll see the following folders and files:
-
-```
-/
-├── data/
-|   └── ...
-├── public/
-│   ├── robots.txt
-│   └── favicon.ico
-├── src/
-│   ├── assets/
-│   │   ├── images/
-|   |   └── styles/
-|   |       └── base.css
-│   ├── components/
-│   │   ├── atoms/
-│   │   ├── blog/
-│   │   ├── core/
-|   |   └── widgets/
-|   |       ├── Header.astro
-|   |       ├── Footer.astro
-|   |       └── ...
-│   ├── layouts/
-│   |   |── BaseLayout.astro
-│   |   └── ...
-│   ├── pages/
-│   |   ├── [...blog]/
-|   |   |   ├── [...page].astro
-|   |   |   └── [slug].astro
-│   |   ├── [...categories]/
-|   |   |   └── [category]/
-|   |   |       └── [...page].astro
-│   |   ├── [...tags]/
-|   |   |   └── [tag]/
-|   |   |       └── [...page].astro
-│   |   ├── index.astro
-|   |   ├── 404.astro
-|   |   └-- rss.xml.js
-│   ├── utils/
-│   └── config.mjs
-├── package.json
-└── ...
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory if they do not require any transformation or in the `assets/` directory if they are imported directly.
-
-### Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command               | Action                                             |
-| :-------------------- | :------------------------------------------------- |
-| `npm install`         | Installs dependencies                              |
-| `npm run dev`         | Starts local dev server at `localhost:3000`        |
-| `npm run build`       | Build your production site to `./dist/`            |
-| `npm run preview`     | Preview your build locally, before deploying       |
-| `npm run format`      | Format codes with Prettier                         |
-| `npm run lint:eslint` | Run Eslint                                         |
-| `npm run astro ...`   | Run CLI commands like `astro add`, `astro preview` |
-
-<br>
-
-### Deploy
-
-Build and deploy for the [Tooli.Tools](https://tooli.tools) homepage is accomplished through github actions contained within this repo.
-
-#### Deploy to production (manual)
-
-You can create an optimized production build with:
-
-```shell
-npm run build
-```
-
-Now, your website is ready to be deployed. All generated files are located at
-`dist` folder, which you can deploy the folder to any hosting service you
-prefer.
-
-<br>
+If you have any idea, suggestions or find any bugs, feel free to open a discussion, an issue or create a pull request. That would be very useful for all of us and we would be happy to listen and take action. More info can be [found here](CONTRIBUTING.md).
 
 ## Acknowledgements
 
-- **Website Theme**: [Astrowind](https://github.com/onwidget/astrowind).
-- **Json formatting**: [json-viewer](https://wutility.github.io/json-viewer/)
-- **DNS over HTTPs**: [Doh](https://github.com/byu-imaal/dohjs)
+The tooli.tools website is built on the shoulders of open-source giants, using the [Astrowind](https://github.com/onwidget/astrowind) theme and countless open-source libraries that are credited on the pages where they are used.
 
 ## License
 
