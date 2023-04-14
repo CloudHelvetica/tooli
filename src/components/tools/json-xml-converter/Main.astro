@@ -3,9 +3,7 @@ import Error from '~/components/atoms/Error.astro';
 ---
 
 <script>
-	// import { Buffer } from 'buffer';
 	import convert from 'xml-js';
-	// globalThis.Buffer = Buffer;
 	const errorAlert = document.querySelector('#error');
 	const resultContainer = document.querySelector('#result');
 	const submitToJsonButton = document.querySelector('#submit-to-json');
@@ -33,7 +31,7 @@ import Error from '~/components/atoms/Error.astro';
 		var input = document.getElementById('input').value.trim();
 		input = JSON.parse(input);
 		console.log(input);
-		const xmlData = convert.js2xml(input); //, { compact: false, spaces: 4 });
+		const xmlData = convert.js2xml(input); //, { compact: false, spaces: 4 }); TODO make this a config option
 		console.log(xmlData);
 		resultContainer.appendChild(document.createTextNode(xmlData));
 	}
@@ -42,13 +40,15 @@ import Error from '~/components/atoms/Error.astro';
 	submitToXMLButton.addEventListener('click', jsonToXml);
 	resetPage();
 
-	// var xml =
-	// 	'<?xml version="1.0" encoding="utf-8"?>' +
-	// 	'<note importance="high" logged="true">' +
-	// 	' <title>Happy</title>' +
-	// 	' <todo>Work</todo>' +
-	// 	' <todo>Play</todo>' +
-	// 	'</note>';
+	var xml =
+		'<?xml version="1.0" encoding="utf-8"?>\n' +
+		'<note importance="high" logged="true">\n' +
+		'	<title>Happy</title>\n' +
+		'	<todo>Work</todo>\n' +
+		'	<todo>Play</todo>\n' +
+		'</note>';
+
+	document.getElementById('input').value = xml;
 	// var result1 = convert.xml2json(xml, { compact: false, spaces: 4 });
 	// console.log(result1);
 </script>
@@ -77,8 +77,10 @@ import Error from '~/components/atoms/Error.astro';
 											id="input"
 											rows="10"
 											class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400"
-											placeholder="Paste your Json data here.."
-											required></textarea>
+											placeholder="Paste your JSON or XML data here.."
+											required
+										>
+										</textarea>
 									</div>
 									<div class="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
 										<button
