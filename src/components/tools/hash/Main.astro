@@ -1,0 +1,189 @@
+---
+import Error from '~/components/atoms/Error.astro';
+---
+
+<script>
+	// https://github.com/paulmillr/noble-hashes
+	// https://github.com/h2non/jshashes
+	import Hashes from 'jshashes';
+	// small utility method that converts bytes to hex
+	import { bytesToHex as toHex } from '@noble/hashes/utils';
+	const errorAlert = document.querySelector('#error');
+	const resultContainer = document.querySelector('#result');
+	const submitButton = document.querySelector('#submit');
+
+	function resetPage() {
+		errorAlert.style.display = 'none';
+		resultContainer.innerHTML = '';
+	}
+
+	// Convert a hex string to a byte array
+	function hexToBytes(hex) {
+		return ByteBuffer.fromHex(hex).view;
+	}
+	function encodeOutput(value, outputType) {
+		switch (outputType) {
+			case 'RAW':
+				return value;
+			case 'HEX':
+				// console.log(typeof value, new Uint8Array(value));
+				return toHex(value);
+			default:
+				alert(`Unkown output type: ${outputType}.`);
+		}
+	}
+
+	import ByteBuffer from 'bytebuffer';
+
+	function hashValues(event) {
+		event.preventDefault();
+		resetPage();
+
+		var input = document.getElementById('input').value.trim();
+		var hashType = document.getElementById('hashtype').value.trim();
+		var outputType = document.getElementById('outputmode').value.trim();
+		let hashedValue;
+
+		switch (hashType) {
+			case 'MD5':
+				hashedValue = hexToBytes(new Hashes.MD5().hex(input));
+				break;
+			case 'SHA1':
+				hashedValue = hexToBytes(new Hashes.SHA1().hex(input));
+				break;
+			default:
+				alert(`Unkown hash function: ${hashType}.`);
+		}
+
+		const result = encodeOutput(hashedValue, outputType);
+		resultContainer.appendChild(document.createTextNode(result));
+	}
+
+	submitButton.addEventListener('click', hashValues);
+	resetPage();
+</script>
+
+<section>
+	<div class="max-w-6xl mx-auto px-4 sm:px-6">
+		<div class="py-12 md:py-20">
+			<div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto">
+				<h1 class="text-5xl md:text-[3.50rem] font-bold leading-tighter tracking-tighter mb-4 font-heading">
+					Value Hasher
+				</h1>
+				<div class="max-w-3xl mx-auto">
+					<p class="text-xl text-gray-600 mb-8 dark:text-slate-400">
+						This tool allows you to create hash digests of your payload using various algorithms.
+					</p>
+
+					<div class="max-w-3xl m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4">
+						<div class="flex w-full sm:w-full">
+							<form class="w-full sm:w-full">
+								<div
+									class="w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600"
+								>
+									<div class="px-4 py-2 bg-white rounded-t-lg dark:bg-gray-800">
+										<label for="input" class="sr-only">Input</label>
+										<textarea
+											id="input"
+											rows="10"
+											class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400"
+											placeholder="Paste your JSON or XML data here.."
+											required
+										>
+										</textarea>
+									</div>
+									<div class="flex items-center px-3 py-2 border-t dark:border-gray-600">
+										<div class="pr-8 inline-block">
+											<label for="hashtype" class="mb-2 text-sm font-small text-gray-900 dark:text-white"
+												>Hash function</label
+											>
+											<select
+												name="hashtype"
+												id="hashtype"
+												value="Hash type"
+												class="block p-2 inline-flex text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+											>
+												<option value="MD5">MD5</option>
+												<option value="SHA1">SHA1</option>
+											</select>
+										</div>
+										<div class="pr-8 inline-block">
+											<label for="outputmode" class="mb-2 text-sm font-small text-gray-900 dark:text-white"
+												>Output</label
+											>
+											<select
+												name="outputmode"
+												id="outputmode"
+												value="Output Mode"
+												class="block p-2 inline-flex text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+											>
+												<option value="RAW">Raw</option>
+												<option selected="selected" value="HEX">Hex</option>
+											</select>
+										</div>
+										<!-- <div class="pr-8 inline-block">
+											<label for="outputmode" class="mb-2 text-sm font-small text-gray-900 dark:text-white"
+												>Rounds</label
+											>
+											<input
+												name="numrounds"
+												id="numrounds"
+												value="1"
+												type="number"
+												size="6"
+												class="block p-2 inline-flex text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+											/>
+										</div> -->
+
+										<div class="pr-8 inline-block">
+											<button
+												type="submit"
+												id="submit"
+												class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800"
+											>
+												Hash
+											</button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+					<Error>
+						<p slot="header">Invalid Input</p>
+						<p slot="body">The string you have input is not valid.</p>
+					</Error>
+
+					<div
+						class="p-4 w-full mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600"
+					>
+						<div id="result" class="w-full text-left"></div>
+					</div>
+
+					<div style="margin-top: 75px;">
+						<h3 class="font-bold leading-tighter tracking-tighter mb-4 mt-4 font-heading">Acknowledgements</h3>
+						<p class="text-gray-600 dark:text-slate-400">
+							Hash functions implemented by the <well>jshashes</well> library: <a
+								class="hover:text-primary-600 underline underline-offset-4 decoration-1 decoration-dotted transition ease-in duration-200"
+								href="https://github.com/h2non/jshashes">Github</a
+							>.
+						</p><p class="text-gray-600 mb-8 dark:text-slate-400">
+							Hash functions implemented by the <well>noble-hashes</well> library: <a
+								class="hover:text-primary-600 underline underline-offset-4 decoration-1 decoration-dotted transition ease-in duration-200"
+								href="https://github.com/paulmillr/noble-hashes">Github</a
+							>.
+						</p>
+					</div>
+
+					<div style="margin-top: 75px;">
+						<h3 class="font-bold leading-tighter tracking-tighter mb-4 mt-4 font-heading">Roadmap</h3>
+						<ul>
+							<li class="text-gray-600 mb-8 dark:text-slate-400">Add an options to perform the hash for N rounds</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
