@@ -3,6 +3,7 @@ import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 import { getCanonical, getHomePermalink } from '~/utils/permalinks';
 
+import { Picture } from '@astrojs/image/components';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Hero from '~/components/widgets/Hero.astro';
 
@@ -14,26 +15,21 @@ const meta = {
 ---
 
 <Layout {meta}>
-	<!-- image={{ src: import('~/assets/images/hero.png'), alt: 'AstroWind Hero Image' }} -->
-	<Hero
-		callToAction={{ text: 'Get template', href: 'https://github.com/onwidget/astrowind', icon: 'tabler:download' }}
-		callToAction2={{ text: 'Learn more', href: '#features' }}
-	>
+	<Hero>
 		<Fragment slot="title">
-			Free template for <span class="hidden lg:inline">create your website <br class="2xl:hidden" /> with</span>
-			<span class="text-accent dark:text-white highlight">Roadmap</span> + Tailwind CSS
+			Development <span class="text-accent dark:text-white highlight">Roadmap</span> 🚧
 		</Fragment>
 
 		<Fragment slot="subtitle">
-			<span class="hidden sm:inline">
-				<span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 2.0
-				+ Tailwind CSS.</span
-			>
-			<span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span> Suitable for Startups,
-			Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.
+			<p class="text-xl text-gray-600 mb-8 dark:text-slate-400">
+				Tooli.Tools is a fully <span
+					class="font-semibold underline decoration-wavy decoration-1 decoration-primary-600 underline-offset-2"
+					>open-source</span
+				> set of dev tools. This page shows the planned general direction of development. Have your say by raising a Github
+				Issue or get coding by opening a pull request!
+			</p>
 		</Fragment>
 	</Hero>
-
 	<CallToAction
 		callToAction={{
 			text: 'Contribute Now',
@@ -44,4 +40,17 @@ const meta = {
 			Be the change you want to see. <br class="hidden md:inline" />Submit your improvements via our Github repository.
 		</Fragment>
 	</CallToAction>
+
+	<section class="relative">
+		<Picture
+			class="mx-auto rounded-md w-full"
+			widths={[400, 768, 1024, 2040]}
+			sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+			aspectRatio={1024 / 576}
+			loading="eager"
+			width={1024}
+			height={576}
+			src={import('~/assets/images/hero.png')}
+		/>
+	</section>
 </Layout>
