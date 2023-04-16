@@ -49,6 +49,7 @@ There's a lot to TODO:
 - [ ] Cleanup unused Astrowind artifacts
 - [ ] Better search functionality on home page
 - [ ] A transparent way to verify that the content tooli.tools website website is not altered
+- [ ] On the standard output section add an option to disable bytes and characters of the output
 
 ## Contributing
 
