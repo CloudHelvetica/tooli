@@ -1,0 +1,47 @@
+---
+import { SITE } from '~/config.mjs';
+import Layout from '~/layouts/PageLayout.astro';
+import { getCanonical, getHomePermalink } from '~/utils/permalinks';
+
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Hero from '~/components/widgets/Hero.astro';
+
+const meta = {
+	title: SITE.title,
+	description: SITE.description,
+	canonical: getCanonical(getHomePermalink()),
+};
+---
+
+<Layout {meta}>
+	<!-- image={{ src: import('~/assets/images/hero.png'), alt: 'AstroWind Hero Image' }} -->
+	<Hero
+		callToAction={{ text: 'Get template', href: 'https://github.com/onwidget/astrowind', icon: 'tabler:download' }}
+		callToAction2={{ text: 'Learn more', href: '#features' }}
+	>
+		<Fragment slot="title">
+			Free template for <span class="hidden lg:inline">create your website <br class="2xl:hidden" /> with</span>
+			<span class="text-accent dark:text-white highlight">Roadmap</span> + Tailwind CSS
+		</Fragment>
+
+		<Fragment slot="subtitle">
+			<span class="hidden sm:inline">
+				<span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 2.0
+				+ Tailwind CSS.</span
+			>
+			<span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span> Suitable for Startups,
+			Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs.
+		</Fragment>
+	</Hero>
+
+	<CallToAction
+		callToAction={{
+			text: 'Contribute Now',
+			href: 'https://github.com/CloudHelvetica/tooli',
+		}}
+	>
+		<Fragment slot="subtitle">
+			Be the change you want to see. <br class="hidden md:inline" />Submit your improvements via our Github repository.
+		</Fragment>
+	</CallToAction>
+</Layout>
