@@ -3,7 +3,6 @@ import { SITE } from '~/config.mjs';
 import Layout from '~/layouts/PageLayout.astro';
 import { getCanonical, getHomePermalink } from '~/utils/permalinks';
 
-import Hero from '~/components/widgets/Hero.astro';
 import Tools from '~/components/widgets/Tools.astro';
 
 const meta = {
@@ -14,13 +13,31 @@ const meta = {
 ---
 
 <Layout {meta}>
-	<Hero />
+	<section>
+		<div class="max-w-6xl mx-auto px-4 sm:px-6">
+			<!--  -->
+			<div class="pt-12 md:pt-20">
+				<div class="text-center pb-10 md:pb-10 max-w-5xl mx-auto">
+					<h1 class="text-5xl md:text-[3.50rem] font-bold leading-tighter tracking-tighter mb-4 font-heading">
+						The Developer Toolbelt.
+					</h1>
+					<div class="max-w-3xl mx-auto">
+						<p class="text-xl text-gray-600 mb-8 dark:text-slate-400">
+							Tooli.Tools is a fully <span
+								class="font-semibold underline decoration-wavy decoration-1 decoration-primary-600 underline-offset-2"
+								>open-source</span
+							> set of dev tools provided in a <span
+								class="font-semibold underline decoration-wavy decoration-1 decoration-primary-600 underline-offset-2"
+								>private</span
+							> and <span
+								class="font-semibold underline decoration-wavy decoration-1 decoration-primary-600 underline-offset-2"
+								>advertisment-free</span
+							> envrionment.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 	<Tools />
-	<!-- <Note /> -->
-	<!-- <Features /> -->
-	<!-- <Features2 />
-	<Features3 /> -->
-	<!-- <FAQs /> -->
-	<!-- <Stats /> -->
-	<!-- <CallToAction /> -->
 </Layout>

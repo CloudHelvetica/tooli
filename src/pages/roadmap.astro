@@ -1,0 +1,102 @@
+---
+import { SITE } from '~/config.mjs';
+import Layout from '~/layouts/PageLayout.astro';
+import { getCanonical, getHomePermalink } from '~/utils/permalinks';
+
+import { Picture } from '@astrojs/image/components';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Hero from '~/components/widgets/Hero.astro';
+
+const meta = {
+	title: SITE.title,
+	description: SITE.description,
+	canonical: getCanonical(getHomePermalink()),
+};
+---
+
+<style>
+	.roadmap-ul {
+		list-style: circle;
+		padding-left: 50px;
+	}
+</style>
+
+<Layout {meta}>
+	<Hero>
+		<Fragment slot="title">
+			Development <span class="text-accent dark:text-white highlight">Roadmap</span> 🚧
+		</Fragment>
+
+		<Fragment slot="subtitle">
+			<p class="text-xl text-gray-600 mb-8 dark:text-slate-400">
+				Tooli.Tools is a fully <span
+					class="font-semibold underline decoration-wavy decoration-1 decoration-primary-600 underline-offset-2"
+					>open-source</span
+				> set of dev tools. This page shows the planned general direction of development. Have your say by raising a Github
+				Issue or get coding by opening a pull request!
+			</p>
+		</Fragment>
+	</Hero>
+
+	<section class="relative md:-mt-[76px]">
+		<div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+		<div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+			<div class="text-left pb-10 md:pb-16 max-w-screen-lg mx-auto">
+				<h2 class="text-xl font-bold tracking-tight dark:text-white sm:text-xl mb-2">Tools:</h2>
+				<ul class="roadmap-ul">
+					<li>Document converters (e.g. Json to XML)</li>
+					<li>XML Formatter</li>
+					<li>Timestamp converter</li>
+					<li>Code minify / beautify</li>
+					<li>String escaper</li>
+					<li>Secret vault generator</li>
+					<li>Better error handling for DNS tool</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="relative md:-mt-[76px]">
+		<div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+			<div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+
+			<div class="text-left pb-10 md:pb-16 max-w-screen-lg mx-auto">
+				<h3 class="text-xl font-bold tracking-tight dark:text-white sm:text-xl mb-2">House-keeping:</h3>
+
+				<ul class="roadmap-ul">
+					<li>Create Favicon</li>
+					<li>Make it easier to self-host (e.g. by adding clear documentation)</li>
+					<li>Copy to Clip board buttons</li>
+					<li>Cleanup unused Astrowind artefacts</li>
+					<li>Better search functionality on home page</li>
+					<li>A transparent way to verify that the content tooli.tools website website is not altered</li>
+					<li>On the standard output section add an option to disable bytes and characters of the output</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<CallToAction
+		callToAction={{
+			text: 'Contribute Now',
+			href: 'https://github.com/CloudHelvetica/tooli',
+		}}
+	>
+		<Fragment slot="subtitle">
+			Be the change you want to see. <br class="hidden md:inline" />Submit your improvements via our Github repository.
+		</Fragment>
+	</CallToAction>
+
+	<section class="relative">
+		<Picture
+			class="mx-auto rounded-md w-full"
+			widths={[400, 768, 1024, 2040]}
+			sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+			aspectRatio={1024 / 576}
+			loading="eager"
+			width={1024}
+			height={576}
+			src={import('~/assets/images/hero.png')}
+		/>
+	</section>
+</Layout>
