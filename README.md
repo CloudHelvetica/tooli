@@ -16,9 +16,6 @@ A free and open-source set of developer tools built on the shoulders of giants. 
 
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
-  - [Project structure](#project-structure)
-  - [Commands](#commands)
-  - [Deploy](#deploy)
 - [Acknowledgements](#acknowledgements)
 - [Privacy Disclosure](#privacy-disclosure)
 - [License](#license)
@@ -26,30 +23,6 @@ A free and open-source set of developer tools built on the shoulders of giants. 
 </details>
 
 <br>
-
-## Roadmap
-
-There's a lot to TODO:
-
-**Tools**
-
-- [ ] Document converters (e.g. Json to XML)
-- [ ] XML Formater
-- [ ] Timestamp converter
-- [ ] Code minify / beautify
-- [ ] Secret vault generator
-- [ ] Hash functions (e.g. sha256, md5)
-- [ ] Better error handling for DNS tool
-
-**House-keeping**
-
-- [ ] Create Favicon
-- [ ] Make it easier to self-host (e.g. by adding clear documentation)
-- [ ] Copy to Clip board buttons
-- [ ] Cleanup unused Astrowind artifacts
-- [ ] Better search functionality on home page
-- [ ] A transparent way to verify that the content tooli.tools website website is not altered
-- [ ] On the standard output section add an option to disable bytes and characters of the output
 
 ## Contributing
 
